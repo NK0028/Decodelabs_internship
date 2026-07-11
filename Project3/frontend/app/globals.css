@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0a0f;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.engine-card {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+}
+
+.engine-card.selected {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.engine-card:hover:not(.selected) {
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.ratio-btn {
+  border: 2px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 10px 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ratio-btn.selected {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.15);
+  color: #a5b4fc;
+}
+
+.pulse-ring {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
